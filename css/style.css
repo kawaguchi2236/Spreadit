@@ -1,0 +1,698 @@
+@charset "UTF-8";
+* {
+  font-family: "Noto Sans Japanese", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "MS Pゴシック", "MS PGothic", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 初期アニメーション */
+.line {
+  width: 0%;
+  height: 1px;
+  background-color: aquamarine;
+  position: fixed;
+  top: 50%;
+  z-index: 4;
+}
+
+.up {
+  width: 100%;
+  height: 50%;
+  margin: 0;
+  background-color: #000;
+  position: fixed;
+  z-index: 3;
+}
+
+.down {
+  width: 100%;
+  height: 50%;
+  background-color: #000;
+  position: fixed;
+  margin: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.wrapper {
+  width: 100%;
+  color: #fff;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: black;
+  transition: 2000ms;
+}
+
+header {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+header .header-logo {
+  font-size: 30px;
+  padding-top: 25px;
+  margin-left: 30px;
+  font-family: "Freight Sans Light", "Freight Sans Light", sans-serif;
+}
+header .header-logo a {
+  color: #fff;
+}
+header .header-logo a:hover {
+  color: aqua;
+  transition: 800ms;
+}
+header ul {
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+header ul li {
+  color: #222;
+  margin-right: 30px;
+  padding-top: 30px;
+  font-size: 20px;
+  font-weight: 300;
+  cursor: pointer;
+}
+header ul li a:hover {
+  color: aqua;
+  border-bottom: 3px solid aqua;
+  transition: 800ms;
+}
+
+.right-container,
+.left-container {
+  transition: 2000ms;
+}
+
+section {
+  z-index: 1;
+  height: 100vh;
+}
+section.layout-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+section.layout-container .left-container {
+  background-color: black;
+}
+section.layout-container .left-container .main-title-sentense {
+  color: #fff;
+  position: fixed;
+  width: 48%;
+  line-height: 16vh;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  text-align: end;
+  font-size: 80px;
+  top: 40vh;
+  left: 0;
+  transition: 5000ms;
+  margin-right: 2%;
+  z-index: 2;
+}
+section.layout-container .right-container {
+  background-color: #fff;
+  position: relative;
+}
+section.layout-container .right-container .sentense-last {
+  color: black;
+  position: fixed;
+  width: 48%;
+  line-height: 16vh;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  font-size: 80px;
+  top: 40vh;
+  left: 50%;
+  transition: 5000ms;
+  margin-left: 2%;
+  z-index: 2;
+}
+section.profile-container .left-container {
+  text-align: center;
+  justify-content: center;
+}
+section.profile-container .left-container img {
+  margin-top: 25%;
+  width: 80%;
+  object-fit: contain;
+}
+section.profile-container .right-container {
+  position: relative;
+}
+section.profile-container .right-container .title-profile {
+  color: #000;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  font-size: 50px;
+  position: absolute;
+  top: 30%;
+  left: 10px;
+}
+section.profile-container .right-container .subtitle-profile {
+  color: #000;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  position: absolute;
+  top: 38%;
+  left: 10px;
+  margin-left: 5px;
+}
+section.job-container .left-container {
+  position: relative;
+}
+section.job-container .left-container p {
+  width: 80%;
+  font-family: "Hiragino Mincho Pro、ヒラギノ明朝 Pro";
+}
+section.job-container .left-container p.title-field {
+  font-size: 30px;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  position: absolute;
+  top: 180px;
+  left: 50px;
+}
+section.job-container .left-container p.title-field span:hover {
+  color: aqua;
+  transition: 500ms;
+}
+section.job-container .left-container p.second-content {
+  font-size: 25px;
+  position: absolute;
+  top: 240px;
+  left: 50px;
+}
+section.job-container .left-container p.title-field2 {
+  font-size: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  font-size: 30px;
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  position: absolute;
+  top: 490px;
+  left: 50px;
+}
+section.job-container .left-container p.title-field2 span:hover {
+  color: aqua;
+  transition: 500ms;
+}
+section.job-container .left-container p.second-content2 {
+  font-size: 25px;
+  position: absolute;
+  top: 550px;
+  left: 50px;
+}
+section.job-container .right-container img {
+  object-fit: fit;
+  width: 100%;
+  height: 100%;
+}
+
+section.half-layout {
+  height: 200vh;
+}
+
+.wrapper footer {
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 30px;
+  background-color: #000;
+}
+.wrapper footer ul {
+  list-style: none;
+  text-align: center;
+}
+.wrapper footer ul :nth-child(1) {
+  font-size: 20px;
+  font-family: "Hiragino Mincho Pro、ヒラギノ明朝 Pro";
+}
+.wrapper footer ul :nth-child(2) {
+  font-family: "PP Woodland", "ZCOOL XiaoWei", "Baskerville";
+  font-size: 20px;
+}
+.wrapper footer ul li {
+  margin-top: 20px;
+}
+
+.work-wrapper {
+  background-color: #fff;
+  width: 1170px;
+  max-width: 100%;
+}
+.work-wrapper header {
+  z-index: 2;
+  width: 100%;
+}
+.work-wrapper header .header-logo a {
+  color: #222;
+}
+
+main {
+  z-index: 1;
+}
+
+section.work-title-container {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+section.work-title-container .work-titlebox {
+  padding-top: 100px;
+  height: 120px;
+}
+section.work-title-container .work-titlebox p.work-subtitle {
+  margin: 0;
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: "Bebas Neue", sans-serif;
+}
+section.work-title-container .work-titlebox h1.work-title {
+  margin: 0;
+  font-size: 60px;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+}
+section.work-title-container .work-pulldown-box {
+  height: 40px;
+  padding-top: 60px;
+}
+section.work-title-container .work-pulldown-box select {
+  border-radius: 5px;
+  border: 2px solid lightgray;
+  font-size: 15px;
+  height: 25px;
+  text-align: center;
+  font-family: sans-serif;
+  width: 30%;
+}
+section.work-title-container .photo-gridbox {
+  display: grid;
+  z-index: 1;
+  gap: 10px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+section.work-title-container .photo-gridbox .photo-card {
+  outline: 1px solid black;
+  height: 35vh;
+}
+section.work-title-container .photo-gridbox .photo-card:hover {
+  outline: 2px solid aqua;
+}
+section.work-title-container .photo-gridbox .photo-card .img-photo {
+  width: 100%;
+  object-fit: contain;
+  z-index: 1;
+  height: 100%;
+}
+section.work-title-container .photo-gridbox .photo-card .img-photo:hover {
+  object-fit: fill;
+}
+section.work-title-container .pagination {
+  height: 60px;
+  text-align: center;
+}
+section.work-title-container .pagination .page-number {
+  margin-top: 100px;
+}
+section.work-title-container .pagination .page-number ul {
+  list-style: none;
+}
+section.work-title-container .pagination .page-number ul li {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 5px/5px;
+  transition: 500ms;
+}
+section.work-title-container .pagination .page-number ul li.prev, section.work-title-container .pagination .page-number ul li.next {
+  width: 50px;
+}
+section.work-title-container .pagination .page-number ul li:hover {
+  color: #fff;
+  background-color: #333;
+}
+#body {
+  position: relative;
+}
+
+.modal {
+  display: none;
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal .modal-content {
+  z-index: 3;
+  background-color: #f4f4f4;
+  margin: 5% auto;
+  width: 60%;
+  height: 650px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+.modal .modal-content .modal-header {
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.modal .modal-content .modal-header h1 {
+  margin: 1rem 0;
+  margin-left: 4%;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+}
+.modal .modal-content .modal-header .modalClose {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+.modal .modal-content .modal-header .modalClose:hover {
+  cursor: pointer;
+  color: rgb(251, 25, 25);
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal .modal-photobox {
+  width: 100%;
+  height: 76%;
+  margin-bottom: 4%;
+}
+.modal .modal-photobox .modal-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 50px;
+}
+
+main .work-title-container .portfolio {
+  z-index: 2;
+  margin-top: 50px;
+}
+main .work-title-container .portfolio .portfolio-title {
+  font-size: 20px;
+  font-family: "Bebas Neue", sans-serif;
+}
+main .work-title-container .portfolio .portfolio-title span a:hover {
+  color: aqua;
+  border-bottom: 1px solid aqua;
+  transition: 500ms;
+}
+main .work-title-container .portfolio iframe {
+  z-index: 3;
+  width: 100%;
+  height: 80vh;
+}
+main .work-title-container .portfolio .portfolio-comment .comment-flex {
+  display: flex;
+  margin-top: 100px;
+}
+main .work-title-container .portfolio .portfolio-comment .comment-flex .portfolio-comment-title {
+  font-size: 40px;
+  text-align: end;
+  font-family: "Bebas Neue", sans-serif;
+}
+main .work-title-container .portfolio .portfolio-comment .comment-flex .portfolio-comment-itembox1 {
+  width: 100%;
+  height: 300px;
+  font-size: 25px;
+  line-height: 50px;
+  margin-left: 50px;
+  font-family: "Hiragino Mincho Pro、ヒラギノ明朝 Pro";
+}
+main .work-title-container .portfolio .portfolio-comment .comment-flex .portfolio-comment-itembox2 {
+  width: 100%;
+  height: 300px;
+  font-size: 25px;
+  margin-right: 50px;
+  margin-left: 170px;
+  font-family: "Hiragino Mincho Pro、ヒラギノ明朝 Pro";
+}
+
+.bgc-gray {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(211, 211, 211, 0.203);
+  width: 500px;
+  height: 400px;
+  top: 1550px;
+  left: 500px;
+}
+
+#info-header {
+  position: fixed;
+}
+#info-header #header-black {
+  font-size: 30px;
+  padding-top: 25px;
+  margin-left: 30px;
+  font-family: "Freight Sans Light", "Freight Sans Light", sans-serif;
+}
+#info-header #header-black:hover {
+  color: aqua;
+  transition: 800ms;
+}
+
+.info-wrapper {
+  width: 100%;
+}
+.info-wrapper section {
+  width: 100%;
+  text-align: center;
+}
+
+.info-title-display {
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 0;
+  height: 90vh;
+}
+
+#info2 {
+  transition: 5000ms;
+}
+
+@media screen and (max-width: 959px) {
+  /* 959px以下に適用されるCSS（タブレット用） */
+  section.layout-container .left-container .main-title-sentense {
+    font-size: 60px;
+  }
+  section.layout-container .right-container .sentense-last {
+    font-size: 60px;
+  }
+  section.profile-container .right-container .title-profile {
+    top: 10%;
+  }
+  section.profile-container .right-container .subtitle-profile {
+    font-size: 20px;
+    top: 20%;
+  }
+  section.job-container {
+    height: 80vh;
+  }
+  section.job-container .right-container img {
+    height: 80vh;
+  }
+  section .half-layout {
+    display: none;
+  }
+  section.work-title-container .photo-gridbox .photo-card {
+    height: 20vh;
+  }
+  section.work-title-container .photo-gridbox .photo-card:hover {
+    outline: 2px solid aqua;
+  }
+  .modal .modal-content {
+    width: 65%;
+    height: 450px;
+    margin-top: 300px;
+  }
+  main .work-title-container .portfolio iframe {
+    height: 55vh;
+  }
+  main .work-title-container .portfolio .portfolio-comment .comment-flex .portfolio-comment-itembox2 {
+    margin-left: 0;
+    line-height: auto;
+    height: 500px;
+  }
+  .bgc-gray {
+    left: 200px;
+  }
+}
+@media screen and (max-width: 520px) {
+  header .header-logo {
+    font-size: 18px;
+  }
+  header ul {
+    display: none;
+  }
+  section.layout-container .left-container .main-title-sentense {
+    font-size: 30px;
+  }
+  section.layout-container .left-container .delete-sentense {
+    display: none;
+  }
+  section.layout-container .right-container .sentense-last {
+    font-size: 30px;
+  }
+  section.profile-container .left-container img {
+    width: 100%;
+    object-fit: fit;
+  }
+  section.profile-container .right-container .title-profile {
+    font-size: 24px;
+    top: 9%;
+  }
+  section.profile-container .right-container .subtitle-profile {
+    font-size: 12px;
+    top: 17%;
+    left: 7px;
+  }
+  section.job-container .left-container p.title-field {
+    top: 80px;
+    left: 30px;
+    font-size: 12px;
+  }
+  section.job-container .left-container p.second-content {
+    top: 120px;
+    left: 30px;
+    font-size: 12px;
+  }
+  section.job-container .left-container p.title-field2 {
+    top: 260px;
+    left: 30px;
+    font-size: 12px;
+  }
+  section.job-container .left-container p.second-content2 {
+    top: 300px;
+    left: 30px;
+    font-size: 12px;
+  }
+  section.job-container .right-container img {
+    object-fit: fit;
+    width: 100%;
+    height: 100%;
+  }
+  section.job-container.half-layout {
+    display: none;
+  }
+  .wrapper footer ul :nth-child(1) {
+    font-size: 15px;
+  }
+  .wrapper footer ul :nth-child(2) {
+    font-size: 15px;
+  }
+  #g-nav {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    right: -120%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(153, 153, 153, 0.99);
+    /* 動き */
+    transition: all 0.6s;
+  }
+  #g-nav.panelactive {
+    right: 0%;
+  }
+  #g-nav.panelactive #g-nav-list {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  #g-nav ul {
+    position: absolute;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 100%; */
+  }
+  #g-nav li {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+  #g-nav li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: bold;
+  }
+  .hamburger, #g-nav {
+    display: block;
+  }
+  .hamburger {
+    position: fixed;
+    z-index: 9999;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+  }
+  .hamburger span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #666;
+    width: 45%;
+  }
+  .hamburger span:nth-last-of-type(1) {
+    top: 15px;
+  }
+  .hamburger span:nth-last-of-type(2) {
+    top: 23px;
+  }
+  .hamburger span:nth-last-of-type(3) {
+    top: 31px;
+  }
+  .hamburger.active span:nth-last-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+  .hamburger.active span:nth-last-of-type(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-last-of-type(3) {
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+}/*# sourceMappingURL=style.css.map */
